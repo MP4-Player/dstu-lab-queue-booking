@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн очередь</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="orange-theme">
+    <!-- Верхняя панель -->
+    <div class="top-panel">
+        <img src="icons/institute.png" alt="Институт" class="institute-icon">
+        <img src="icons/java.png" alt="Java" class="java-icon">
+        <img src="icons/user.png" alt="Пользователь" class="user-icon" id="user-photo">
+        <button id="theme-toggle" class="theme-toggle">🌓</button>
+    </div>
+
+    <!-- Контент страницы -->
+    <div id="content" class="page">
+        <!-- Контент будет динамически обновляться -->
+    </div>
+
+    <!-- Нижняя панель -->
+    <div class="bottom-panel">
+        <button id="nav-notifications"><img src="icons/notifications.png" alt="Уведомления"></button>
+        <button id="nav-queues"><img src="icons/queues.png" alt="Очереди"></button>
+        <button id="nav-schedule"><img src="icons/schedule.png" alt="Расписание"></button>
+        <button id="nav-profile"><img src="icons/profile.png" alt="Личный кабинет"></button>
+    </div>
+
+    <!-- Модальное окно для записи -->
+    <div id="queue-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-modal">&times;</span>
+            <h2>Запись на пару</h2>
+            <p>Ваше место в очереди: <span id="queue-position">3</span></p>
+            <input type="hidden" id="queue-subject" value="">
+            <input type="hidden" id="queue-teacher" value="">
+            <label for="lab-number">Выберите лабораторную:</label>
+            <select id="lab-number">
+                <option value="1">Лабораторная 1</option>
+                <option value="2">Лабораторная 2</option>
+            </select>
+            <button id="confirm-queue">Подтвердить</button>
+            <button id="cancel-queue">Отмена</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для просмотра текущей очереди -->
+    <div id="queue-view-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-queue-view-modal" class="close-modal">&times;</span>
+            <h2>Текущая очередь</h2>
+            <div id="queue-list"></div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для списка групп -->
+    <div id="group-list-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-group-list-modal" class="close-modal">&times;</span>
+            <h2>Список групп на текущий семестр</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Номер группы</th>
+                        <th>Лабораторные работы</th>
+                        <th>Практические работы</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ВМО21</td>
+                        <td><input type="number" value="5"></td>
+                        <td><input type="number" value="3"></td>
+                        <td>
+                            <button class="save-group">Сохранить</button>
+                            <button class="clear-group">Очистить</button>
+                        </td>
+                    </tr>
+                    <!-- Добавь другие группы -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
