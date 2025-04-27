@@ -49,4 +49,5 @@ public class Group {
                 ", groupName='" + groupName + '\'' +
                 '}';
     }
+
 }
