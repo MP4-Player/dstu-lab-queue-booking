@@ -1,0 +1,432 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page {
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Верхняя панель */
+.top-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #1E2A3A;
+}
+
+.top-panel img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+/* Темы */
+body.dark-theme {
+    background-color: #0D1B2A;
+    color: #FFFFFF;
+}
+
+body.dark-theme .top-panel {
+    background-color: #1E2A3A;
+}
+
+body.dark-theme button {
+    background-color: #4FC3F7;
+    color: #0D1B2A;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.orange-theme {
+    background-color: #FFF8E1;
+    color: #2E2E2E;
+}
+
+body.orange-theme .top-panel {
+    background-color: #FF6F61;
+}
+
+body.orange-theme button {
+    background-color: #FF3D00;
+    color: #FFF8E1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Нижняя панель */
+.bottom-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1E2A3A;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.bottom-panel button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bottom-panel img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Расписание */
+.schedule-item {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.schedule-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.schedule-item.queued {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+}
+
+.schedule-info {
+    flex: 1;
+}
+
+.join-queue {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: background-color 0.3s;
+}
+
+.join-queue:hover {
+    background-color: #3e8e41;
+}
+
+/* Модальные окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Уведомления */
+.notification {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.notification.read {
+    opacity: 0.6;
+}
+
+.notification:hover {
+    background-color: #eee;
+}
+
+/* Всплывающие уведомления */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1001;
+    animation: slideIn 0.3s, fadeOut 0.5s 2.5s;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Фильтры */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    position: relative;
+}
+
+.filter-select {
+    position: relative;
+    display: inline-block;
+}
+
+.filter-select select {
+    padding: 10px 35px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    appearance: none;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.filter-select::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #555;
+}
+
+/* Профиль */
+.profile-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    max-width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Авторизация */
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.auth-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-form button:hover {
+    background-color: #3e8e41;
+}
+
+/* Очередь в модальном окне */
+.queue-position {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.queue-position:last-child {
+    border-bottom: none;
+}
+
+.queue-position.highlighted {
+    background-color: #e8f5e9;
+    font-weight: bold;
+    border-left: 3px solid #4CAF50;
+    margin-left: -3px;
+}
+
+.cancel-queue {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cancel-queue:hover {
+    background-color: #d32f2f;
+}
+
+/* Тема на день рождения */
+body.birthday-theme {
+    background-color: #ffc0cb; /* Fallback цвет */
+    background-image: radial-gradient(circle at top left, rgba(192, 255, 218, 0.683), rgba(254, 227, 255, 0), rgba(128, 0, 83, 0.459)), url('icons/seamless-pattern-with-cute-fish-cartoon-design_530689-657.avif');
+    background-size: cover, 200px;
+    background-repeat: repeat;
+    color: #d23369;
+    overflow-x: hidden;
+}
+
+
+body.birthday-theme .top-panel {
+    background-color: #ff69b4;
+}
+
+body.birthday-theme button {
+    background-color: #ff1493;
+    color: white;
+}
+
+.birthday-hat {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('icons/R.png'); /* Эмоджи с дудкой */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 100;
+    pointer-events: none;
+    overflow-x: hidden;
+    transform: translateY(10px); 
+    
+}
+
+
+
+
+
+
+
+.birthday-text {
+    color: #ff0000;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center; /* Центрируем текст */
+    margin: 10px 0;
+    text-shadow: 0 0 5px #ffffff;
+    animation: pulse 1s infinite alternate;
+    white-space: nowrap; /* Запрещаем перенос текста */
+    padding: 10px;
+    background-color: rgba(255, 142, 251, 0.7);
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 99;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+/* Добавляем в конец файла */
+.bottom-panel.hidden {
+    display: none !important;
+}
+
+.bottom-panel {
+    transition: all 0.3s ease;
+}
