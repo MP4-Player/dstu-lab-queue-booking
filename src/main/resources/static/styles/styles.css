@@ -430,3 +430,34 @@ body.birthday-theme button {
 .bottom-panel {
     transition: all 0.3s ease;
 }
+/* ====== ДОБАВЛЯЕМ ====== */
+#group-select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    appearance: none;
+    background: url('icons/arrow-down.png') no-repeat right 10px center;
+    background-size: 12px;
+}
+
+/* ====== ДОБАВЛЯЕМ ====== */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}

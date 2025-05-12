@@ -17,7 +17,7 @@ public class ScheduleController {
     }
 
 
-    @GetMapping
+    @GetMapping("/schedule")
     public List<Schedule> getSchedule(){
         return scheduleService.getSchedule();
     }

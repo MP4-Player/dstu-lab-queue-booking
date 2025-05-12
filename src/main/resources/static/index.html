@@ -17,41 +17,31 @@
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
 
     <!-- Для Android Chrome -->
-    <link rel="manifest" href="site.webmanifest"> <!-- Путь к манифесту PWA (если используете) -->
+    <link rel="manifest" href="site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
 <body class="orange-theme">
-    <!-- ... остальной код ... -->
-</body>
-</html>
+<!-- Верхняя панель -->
+<div class="top-panel">
+    <img src="icons/institute.png" alt="Институт" class="institute-icon">
+    <img src="icons/java.png" alt="Java" class="java-icon">
+    <img src="icons/user.png" alt="Пользователь" class="user-icon" id="user-photo">
+    <button id="theme-toggle" class="theme-toggle">🌓</button>
+</div>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Онлайн очередь</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body class="orange-theme">
-    <!-- Верхняя панель -->
-    <div class="top-panel">
-        <img src="icons/institute.png" alt="Институт" class="institute-icon">
-        <img src="icons/java.png" alt="Java" class="java-icon">
-        <img src="icons/user.png" alt="Пользователь" class="user-icon" id="user-photo">
-        <button id="theme-toggle" class="theme-toggle">🌓</button>
-    </div>
+<!-- Контент страницы -->
+<div id="content" class="page">
+    <!-- Контент будет динамически обновляться -->
+</div>
 
-    <!-- Контент страницы -->
-    <div id="content" class="page">
-        <!-- Контент будет динамически обновляться -->
-    </div>
+<!-- Нижняя панель -->
+<div class="bottom-panel">
+    <button id="nav-notifications"><img src="icons/notifications.png" alt="Уведомления"></button>
+    <button id="nav-schedule"><img src="icons/schedule.png" alt="Расписание"></button>
+    <button id="nav-profile"><img src="icons/profile.png" alt="Личный кабинет"></button>
+</div>
 
-    <!-- Нижняя панель -->
-    <div class="bottom-panel">
-        <button id="nav-notifications"><img src="icons/notifications.png" alt="Уведомления"></button>
-        <button id="nav-schedule"><img src="icons/schedule.png" alt="Расписание"></button>
-        <button id="nav-profile"><img src="icons/profile.png" alt="Личный кабинет"></button>
-    </div>
-
-    <script src="script/script.js"></script>
+<script src="script/script.js"></script>
 </body>
 </html>
